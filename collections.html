@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUXORA JEWELS | Collections</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            LUXORA
+            <span>JEWELS</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="collections.html" class="active">Collections</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-icons">
+<button onclick="showMessage()">♡</button>
+    <button onclick="openCart()">🛒</button>
+        </div>
+<div id="cartPanel" class="cart-panel">
+
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button onclick="closeCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+        <strong>Total: ₹<span id="cartTotal">0</span></strong>
+    </div>
+
+    <button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
+
+</div>
+    </header>
+
+
+    <!-- COLLECTION HERO -->
+
+    <section class="collection-hero">
+
+        <p>CURATED WITH LOVE</p>
+
+        <h1>Our Collections</h1>
+
+        <span></span>
+
+        <p class="collection-description">
+            Discover timeless pieces designed to add a little
+            sparkle to every moment.
+        </p>
+
+    </section>
+
+
+    <!-- FILTER BUTTONS -->
+
+    <section class="collection-section">
+
+        <div class="filters">
+
+            <button class="filter-btn active" onclick="filterProducts('all', event)">ALL</button>
+<button class="filter-btn" onclick="filterProducts('rings', event)">RINGS</button>
+<button class="filter-btn" onclick="filterProducts('necklaces', event)">NECKLACES</button>
+<button class="filter-btn" onclick="filterProducts('earrings', event)">EARRINGS</button>
+<button class="filter-btn" onclick="filterProducts('bracelets', event)">BRACELETS</button>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div class="shop-products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="shop-product" data-category="rings">
+
+                <div class="shop-product-image">
+
+                    <span class="product-label">NEW</span>
+
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=85"
+                         alt="Gold Ring">
+
+                    <button class="quick-cart"
+                            onclick="addToCart('Eternal Solitaire Ring', 4999)">
+                        🛒
+                    </button>
+
+                </div>
+
+                <div class="shop-product-info">
+
+                    <p>RINGS</p>
+
+                    <h3>Eternal Solitaire Ring</h3>
+
+                    <strong>₹4,999</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="shop-product" data-category="necklaces">
+
+                <div class="shop-product-image">
+
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=85"
+                         alt="Gold Necklace">
+
+                    <button class="quick-cart"
+                            onclick="addToCart('Golden Grace Necklace', 6499)">
+                        🛒
+                    </button>
+
+                </div>
+
+                <div class="shop-product-info">
+
+                    <p>NECKLACES</p>
+
+                    <h3>Golden Grace Necklace</h3>
+
+                    <strong>₹6,499</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="shop-product" data-category="earrings">
+
+                <div class="shop-product-image">
+
+                    <span class="product-label">POPULAR</span>
+
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85"
+                         alt="Elegant Earrings">
+
+                    <button class="quick-cart"
+                            onclick="addToCart('Celeste Drop Earrings', 3499)">
+                        🛒
+                    </button>
+
+                </div>
+
+                <div class="shop-product-info">
+
+                    <p>EARRINGS</p>
+
+                    <h3>Celeste Drop Earrings</h3>
+
+                    <strong>₹3,499</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="shop-product" data-category="bracelets">
+
+                <div class="shop-product-image">
+
+                    <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=85"
+                         alt="Gold Bracelet">
+
+                    <button class="quick-cart"
+                            onclick="addToCart('Royal Gold Bracelet', 5499)">
+                        🛒
+                    </button>
+
+                </div>
+
+                <div class="shop-product-info">
+
+                    <p>BRACELETS</p>
+
+                    <h3>Royal Gold Bracelet</h3>
+
+                    <strong>₹5,499</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="shop-product" data-category="rings">
+
+                <div class="shop-product-image">
+
+                    <img src="https://images.unsplash.com/photo-1627293509201-cd0c5d4e1d16?auto=format&fit=crop&w=800&q=85"
+                         alt="Diamond Ring">
+
+                    <button class="quick-cart"
+                            onclick="addToCart('Aurora Diamond Ring', 7999)">
+                        🛒
+                    </button>
+
+                </div>
+
+                <div class="shop-product-info">
+
+                    <p>RINGS</p>
+
+                    <h3>Aurora Diamond Ring</h3>
+
+                    <strong>₹7,999</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="shop-product" data-category="necklaces">
+
+                <div class="shop-product-image">
+
+                    <span class="product-label">NEW</span>
+
+                    <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=85"
+                         alt="Pearl Necklace">
+
+                    <button class="quick-cart"
+                            onclick="addToCart('Pearl Elegance Necklace', 5999)">
+                        🛒
+                    </button>
+
+                </div>
+
+                <div class="shop-product-info">
+
+                    <p>NECKLACES</p>
+
+                    <h3>Pearl Elegance Necklace</h3>
+
+                    <strong>₹5,999</strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            LUXORA
+            <span>JEWELS</span>
+        </div>
+
+        <p>
+            Timeless jewellery for timeless moments.
+        </p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="collections.html">Collections</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="copyright">
+            © 2026 LUXORA JEWELS. College Project.
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>let cart = JSON.parse(localStorage.getItem("luxoraCart")) || [];
+
+function addToCart(name, price) {
+
+    let existingProduct = cart.find(product => product.name === name);
+
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("luxoraCart", JSON.stringify(cart));
+
+    alert(name + " has been added to your cart! 🛍️");
+}
+
+
+function showMessage() {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    let message = "🛍️ YOUR LUXORA CART\n\n";
+    let total = 0;
+
+    cart.forEach((product, index) => {
+
+        let productTotal = product.price * product.quantity;
+
+        total += productTotal;
+
+        message +=
+            (index + 1) + ". " +
+            product.name +
+            "\n₹" + product.price +
+            " × " + product.quantity +
+            " = ₹" + productTotal +
+            "\n\n";
+    });
+
+    message += "----------------------\n";
+    message += "TOTAL: ₹" + total;
+
+    alert(message);
+}
+
+
+function filterProducts(category, event) {
+
+    let products = document.querySelectorAll(".shop-product");
+    let buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(button => {
+        button.classList.remove("active");
+    });
+
+    event.target.classList.add("active");
+
+    products.forEach(product => {
+
+        if (
+            category === "all" ||
+            product.dataset.category === category
+        ) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+}
+function openCart() {
+
+    let cartPanel = document.getElementById("cartPanel");
+    let cartItems = document.getElementById("cartItems");
+    let cartTotal = document.getElementById("cartTotal");
+
+    cartPanel.classList.add("open");
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+        cartTotal.innerText = "0";
+        return;
+    }
+
+    cart.forEach(product => {
+
+        let productTotal = product.price * product.quantity;
+
+        total += productTotal;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <h3>${product.name}</h3>
+                <p>₹${product.price} × ${product.quantity}</p>
+                <p><strong>₹${productTotal}</strong></p>
+            </div>
+        `;
+    });
+
+    cartTotal.innerText = total;
+}
+
+
+function closeCart() {
+    document.getElementById("cartPanel").classList.remove("open");
+}
+
+
+function checkout() {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    alert("Thank you for shopping with LUXORA JEWELS! ✨");
+
+}
+</script>
+</body>
+</html>

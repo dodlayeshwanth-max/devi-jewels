@@ -1,0 +1,853 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f5ef;
+    color: #292521;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f5ef;
+    border-bottom: 1px solid #ded8cc;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+    letter-spacing: 6px;
+    text-align: center;
+    margin-top: -5px;
+}
+
+nav {
+    display: flex;
+    gap: 38px;
+}
+
+nav a {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #a47b32;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icons button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(248,245,239,0.98) 0%,
+            rgba(248,245,239,0.85) 40%,
+            rgba(248,245,239,0.15) 100%
+        ),
+        url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.small-heading {
+    color: #a47b32;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 70px;
+    line-height: 0.95;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #a47b32;
+    font-style: italic;
+}
+
+.hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6d665d;
+    max-width: 430px;
+    margin-bottom: 35px;
+}
+
+.shop-btn {
+    display: inline-block;
+    background: #292521;
+    color: white;
+    padding: 15px 30px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.shop-btn:hover {
+    background: #a47b32;
+    transform: translateY(-3px);
+}
+
+
+/* ================= SECTION HEADING ================= */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading p {
+    color: #a47b32;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.section-heading span {
+    display: block;
+    width: 45px;
+    height: 1px;
+    background: #a47b32;
+    margin: 15px auto 0;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+    padding: 100px 7%;
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    background: white;
+    overflow: hidden;
+}
+
+.category-image {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.05);
+}
+
+.ring-image {
+    background-image: url("https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80");
+}
+
+.necklace-image {
+    background-image: url("https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80");
+}
+
+.earrings-image {
+    background-image: url("https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80");
+}
+
+.bracelet-image {
+    background-image: url("https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80");
+}
+
+.category-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.category-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.category-info a {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a47b32;
+}
+
+
+/* ================= FEATURED ================= */
+
+.featured {
+    padding: 100px 7%;
+    background: #eee9df;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background: #f8f5ef;
+}
+
+.product-image {
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e1d5;
+    overflow: hidden;
+}
+
+.product-placeholder {
+    font-size: 100px;
+    transition: 0.4s;
+}
+
+.product-card:hover .product-placeholder {
+    transform: scale(1.15);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #292521;
+    color: white;
+    padding: 7px 12px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product-details p {
+    color: #a47b32;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.product-details h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.product-details h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.view-all a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #292521;
+    padding-bottom: 5px;
+}
+
+
+/* ================= WHY LUXORA ================= */
+
+.why-luxora {
+    padding: 100px 10%;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.why-content {
+    width: 40%;
+}
+
+.why-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.why-content h2 span {
+    color: #a47b32;
+    font-style: italic;
+}
+
+.why-content > p:last-child {
+    color: #777066;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.features {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature div {
+    font-size: 30px;
+    color: #a47b32;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #777066;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #292521;
+    color: white;
+    text-align: center;
+    padding: 60px 20px 25px;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+.footer-logo span {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+    letter-spacing: 5px;
+}
+
+footer > p {
+    color: #bcb5aa;
+    font-size: 12px;
+    margin: 15px 0 25px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-links a {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.copyright {
+    border-top: 1px solid #49443e;
+    padding-top: 20px;
+    color: #8e887f;
+    font-size: 10px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-luxora {
+        flex-direction: column;
+    }
+
+    .why-content,
+    .features {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 8%;
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .category-container,
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .why-content h2 {
+        font-size: 45px;
+    }
+}
+/* CART PANEL */
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 360px;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+    transition: right 0.3s ease;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.cart-header h2 {
+    margin: 0;
+}
+
+.cart-header button {
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#cartItems {
+    margin-top: 25px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.cart-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item h3 {
+    margin: 0 0 8px;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+.cart-total {
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.checkout-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+/* =================================
+   LUXORA SHOPPING BAG
+================================= */
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #f8f7f4;
+    z-index: 9999;
+    overflow-y: auto;
+    transition: right 0.4s ease;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+
+/* HEADER */
+
+.cart-header {
+    height: 80px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.cart-header h2 {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+
+.cart-header button {
+    border: none;
+    background: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+/* MAIN LAYOUT */
+
+.cart-layout {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+}
+
+
+/* LEFT SIDE */
+
+.cart-products {
+    background: transparent;
+}
+
+
+/* PRODUCT CARD */
+
+.cart-product {
+    position: relative;
+
+    display: flex;
+
+    background: white;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #e5e5e5;
+
+    min-height: 180px;
+}
+
+
+.cart-product img {
+    width: 150px;
+    height: 180px;
+
+    object-fit: cover;
+
+    background: #f4f2ed;
+}
+
+
+.cart-product-info {
+    padding: 5px 25px;
+}
+
+
+.cart-product-info h3 {
+    margin: 0 0 8px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+}
+
+
+.brand {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+
+.product-price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+.item-total {
+    font-size: 14px;
+}
+
+
+/* QUANTITY */
+
+.quantity-box {
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #ccc;
+
+    width: fit-content;
+
+    margin-top: 12px;
+}
+
+
+.quantity-box button {
+    width: 35px;
+    height: 32px;
+
+    border: none;
+
+    background: #f5f5f5;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+.quantity-box span {
+    width: 35px;
+
+    text-align: center;
+}
+
+
+/* REMOVE */
+
+.remove-product {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+
+/* PRICE DETAILS */
+
+.price-details {
+    background: white;
+
+    padding: 25px;
+
+    height: fit-content;
+
+    border: 1px solid #e5e5e5;
+
+    position: sticky;
+
+    top: 20px;
+}
+
+
+.price-details h3 {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+}
+
+
+.price-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin: 18px 0;
+
+    font-size: 14px;
+}
+
+
+.discount {
+    color: #16833b;
+}
+
+
+.free {
+    color: #16833b;
+}
+
+
+.price-details hr {
+    border: none;
+
+    border-top: 1px solid #ddd;
+
+    margin: 25px 0;
+}
+
+
+.total-row {
+    font-size: 17px;
+}
+
+
+/* CHECKOUT */
+
+.checkout-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+
+.checkout-btn:hover {
+    background: #b78a32;
+}
+
+
+/* EMPTY CART */
+
+.empty-cart {
+    background: white;
+
+    padding: 70px 30px;
+
+    text-align: center;
+}
+
+
+.empty-cart h2 {
+    font-family: "Cormorant Garamond", serif;
+}
