@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LUXORA JEWELS | Collections</title>
+    <title>devi JEWELS | Collections</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,20 +22,21 @@
     <header class="navbar">
 
         <div class="logo">
-            LUXORA
+            devi
             <span>JEWELS</span>
         </div>
 
         <nav>
             <a href="index.html">Home</a>
             <a href="collections.html" class="active">Collections</a>
+            <a href="account.html">My Account</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
 
         <div class="nav-icons">
 <button onclick="showMessage()">♡</button>
-    <button onclick="openCart()">🛒</button>
+    <button class="cart-trigger" onclick="openCart()" aria-label="Open shopping cart">🛒<span data-cart-count hidden>0</span></button>
         </div>
 <div id="cartPanel" class="cart-panel">
 
@@ -46,11 +47,7 @@
 
     <div id="cartItems"></div>
 
-    <div class="cart-total">
-        <strong>Total: ₹<span id="cartTotal">0</span></strong>
-    </div>
-
-    <button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
+    <div class="cart-footer"><div class="cart-total"><strong>Total</strong><strong id="cartTotal">₹0</strong></div><a class="checkout-btn" href="CART.HTML">Review cart & checkout</a></div>
 
 </div>
     </header>
@@ -77,7 +74,9 @@
     <!-- FILTER BUTTONS -->
 
     <section class="collection-section">
-
+        <aside class="category-rail"><p>SHOP BY TYPE</p><button onclick="filterProducts('all', event)">All jewellery</button><button onclick="filterProducts('rings', event)">Rings</button><button onclick="filterProducts('necklaces', event)">Necklaces</button><button onclick="filterProducts('earrings', event)">Earrings</button><button onclick="filterProducts('bracelets', event)">Bracelets</button></aside>
+        <div class="collection-products-area">
+        <h2 class="products-title">All Products</h2>
         <div class="filters">
 
             <button class="filter-btn active" onclick="filterProducts('all', event)">ALL</button>
@@ -275,6 +274,7 @@
 
 
         </div>
+        </div>
 
     </section>
 
@@ -284,7 +284,7 @@
     <footer>
 
         <div class="footer-logo">
-            LUXORA
+            devi
             <span>JEWELS</span>
         </div>
 
@@ -300,7 +300,7 @@
         </div>
 
         <div class="copyright">
-            © 2026 LUXORA JEWELS. College Project.
+            © 2026 devi JEWELS. College Project.
         </div>
 
     </footer>
@@ -308,7 +308,7 @@
 
     <!-- JAVASCRIPT -->
 
-    <script>let cart = JSON.parse(localStorage.getItem("luxoraCart")) || [];
+    <script>let cart = JSON.parse(localStorage.getItem("deviCart")) || [];
 
 function addToCart(name, price) {
 
@@ -324,7 +324,7 @@ function addToCart(name, price) {
         });
     }
 
-    localStorage.setItem("luxoraCart", JSON.stringify(cart));
+    localStorage.setItem("deviCart", JSON.stringify(cart));
 
     alert(name + " has been added to your cart! 🛍️");
 }
@@ -337,7 +337,7 @@ function showMessage() {
         return;
     }
 
-    let message = "🛍️ YOUR LUXORA CART\n\n";
+    let message = "🛍️ YOUR devi CART\n\n";
     let total = 0;
 
     cart.forEach((product, index) => {
@@ -435,9 +435,27 @@ function checkout() {
         return;
     }
 
-    alert("Thank you for shopping with LUXORA JEWELS! ✨");
+    alert("Thank you for shopping with devi JEWELS! ✨");
 
 }
+
+function addToCart(name, price, image) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+        name: name,
+        price: price,
+        image: image
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Added to shopping bag!");
+
+}
+
 </script>
+    <script src="app.js"></script>
 </body>
 </html>

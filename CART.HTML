@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag | devi Jewels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">devi<span>JEWELS</span></div>
+        <nav><a href="index.html">Home</a><a href="collections.html">Collections</a><a href="CART.HTML" class="active">Shopping Bag</a></nav>
+        <div class="nav-icons"><button class="cart-trigger" onclick="location.href='CART.HTML'" aria-label="Open shopping cart">🛒<span data-cart-count hidden>0</span></button></div>
+    </header>
+    <main class="cart-page">
+        <section class="collection-hero"><p>YOUR SELECTION</p><h1>Shopping Bag</h1><span></span></section>
+        <div class="cart-layout">
+            <div id="cart-container" class="cart-products" aria-live="polite"></div>
+            <aside class="price-details">
+                <h3>PRICE DETAILS</h3>
+                <div class="price-row"><span>Subtotal</span><span id="cart-subtotal">₹0</span></div>
+                <div class="price-row"><span>Coupon saving</span><span class="free" id="cart-discount">− ₹0</span></div>
+                <div class="price-row"><span>Delivery</span><span class="free">Free</span></div>
+                <hr>
+                <div class="price-row total-row"><strong>Total</strong><strong id="cart-total">₹0</strong></div>
+                <div class="coupon-box"><input id="coupon-code" placeholder="Coupon code"><button onclick="applyCoupon()">Apply</button></div>
+                <label class="address-select">Delivery address<select id="delivery-address"><option value="">Sign in to select an address</option></select></label>
+                <p class="account-link">New here? <a href="account.html">Sign in or create an account</a></p>
+                <button class="checkout-btn" onclick="checkoutFromPage()">CHECKOUT</button>
+            </aside>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

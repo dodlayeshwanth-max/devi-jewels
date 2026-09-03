@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LUXORA JEWELS | Timeless Elegance</title>
+    <title>devi JEWELS | Timeless Elegance</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,20 +23,21 @@
     <header class="navbar">
 
         <div class="logo">
-            LUXORA
+            devi
             <span>JEWELS</span>
         </div>
 
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="collections.html">Collections</a>
+            <a href="account.html">My Account</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
 
         <div class="nav-icons">
             <button onclick="showMessage()">♡</button>
-            <button onclick="showMessage()">🛒</button>
+            <button class="cart-trigger" onclick="openCart()" aria-label="Open shopping cart">🛒<span data-cart-count hidden>0</span></button>
         </div>
 
     </header>
@@ -128,7 +129,7 @@
             <span></span>
         </div>
 
-        <div class="product-container">
+        <div class="product-container" data-featured>
 
             <div class="product-card">
 
@@ -185,13 +186,13 @@
     </section>
 
 
-    <!-- ================= WHY LUXORA ================= -->
+    <!-- ================= WHY devi ================= -->
 
-    <section class="why-luxora">
+    <section class="why-devi">
 
         <div class="why-content">
 
-            <p class="small-heading">THE LUXORA PROMISE</p>
+            <p class="small-heading">THE devi PROMISE</p>
 
             <h2>
                 Made to Shine.<br>
@@ -199,7 +200,7 @@
             </h2>
 
             <p>
-                Every Luxora piece is thoughtfully designed with
+                Every devi piece is thoughtfully designed with
                 attention to detail, timeless beauty and exceptional
                 craftsmanship.
             </p>
@@ -237,7 +238,7 @@
     <footer>
 
         <div class="footer-logo">
-            LUXORA
+            devi
             <span>JEWELS</span>
         </div>
 
@@ -253,19 +254,21 @@
         </div>
 
         <div class="copyright">
-            © 2026 LUXORA JEWELS. College Project.
+            © 2026 devi JEWELS. College Project.
         </div>
 
     </footer>
 
+    <aside id="cartPanel" class="cart-panel" aria-label="Shopping cart" aria-live="polite">
+        <div class="cart-header"><h2>Your Cart</h2><button onclick="closeCart()" aria-label="Close cart">×</button></div>
+        <div id="cartItems"></div>
+        <div class="cart-footer"><div class="cart-total"><strong>Total</strong><strong id="cartTotal">₹0</strong></div><a class="checkout-btn" href="CART.HTML">Review cart & checkout</a></div>
+    </aside>
+
 
     <!-- ================= JAVASCRIPT ================= -->
 
-    <script>
-        function showMessage() {
-            alert("This feature will be available soon!");
-        }
-    </script>
+    <script src="app.js"></script>
 
 </body>
 </html>

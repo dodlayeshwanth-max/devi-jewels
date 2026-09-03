@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+/* Always respect hidden content, including the protected admin studio. */
+[hidden] { display: none !important; }
+
 html {
     scroll-behavior: smooth;
 }
@@ -76,6 +79,9 @@ nav a.active {
     font-size: 20px;
     cursor: pointer;
 }
+
+.cart-trigger { position: relative; }
+.cart-trigger [data-cart-count] { position: absolute; top: -7px; right: -9px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 99px; background: #a47b32; color: #fff; font: 600 10px/16px 'Poppins', sans-serif; }
 
 
 /* ================= HERO ================= */
@@ -264,6 +270,11 @@ nav a.active {
     overflow: hidden;
 }
 
+.product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.product-card:hover .product-image img { transform: scale(1.06); }
+.product-add { position: absolute; right: 16px; bottom: 16px; z-index: 2; border: 0; background: #292521; color: #fff; padding: 10px 14px; text-transform: uppercase; letter-spacing: 1px; font: 600 10px 'Poppins', sans-serif; cursor: pointer; }
+.product-add:hover { background: #a47b32; }
+
 .product-placeholder {
     font-size: 100px;
     transition: 0.4s;
@@ -307,6 +318,17 @@ nav a.active {
     font-weight: 500;
 }
 
+.product-details small, .shop-product-info small { display: block; color: #746d62; font-size: 11px; line-height: 1.5; margin: 6px 0; }
+
+/* Signed-in collection browsing */
+.collection-section { max-width: 1280px; margin: 0 auto; padding: 35px 25px 80px; display: grid; grid-template-columns: 180px 1fr; gap: 34px; }
+.collection-section .filters { grid-column: 1 / -1; }
+.category-rail { border-right: 1px solid #ddd5c8; align-self: start; padding: 10px 20px 20px 0; display: grid; gap: 5px; }
+.category-rail p { color: #a47b32; font-size: 10px; letter-spacing: 2px; margin-bottom: 10px; }.category-rail button { text-align: left; border: 0; background: none; padding: 7px 0; cursor: pointer; font: 500 14px 'Poppins', sans-serif; }.category-rail button:hover { color: #a47b32; }
+.products-title { font: 600 35px 'Cormorant Garamond', serif; margin: 0 0 20px; }.shop-products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }.shop-product { position: relative; background: #fff; border: 1px solid #e5e0d7; }.shop-product-image { position: relative; height: 270px; overflow: hidden; }.shop-product-image img { width: 100%; height: 100%; object-fit: cover; }.shop-product-info { padding: 15px; }.shop-product-info p { color: #a47b32; font-size: 9px; letter-spacing: 1.5px; }.shop-product-info h3 { font: 600 22px 'Cormorant Garamond', serif; margin-top: 4px; }.quick-cart { position: absolute; bottom: 10px; right: 10px; border: 0; border-radius: 50%; width: 38px; height: 38px; background: #292521; color: white; cursor: pointer; }.product-rank { position: absolute; z-index: 2; top: 0; left: 0; background: #a47b32; color: #fff; padding: 7px 12px; font-size: 12px; font-weight: 600; }.login-gate { grid-column: 1 / -1; text-align: center; background: #fff; border: 1px solid #e5e0d7; padding: 70px 25px; }.login-gate h2 { font: 600 36px 'Cormorant Garamond', serif; }.login-gate p { color: #746d62; margin: 10px auto 22px; max-width: 450px; }
+@media(max-width:800px){.collection-section{grid-template-columns:1fr}.category-rail{border-right:0;border-bottom:1px solid #ddd5c8;grid-template-columns:repeat(2,1fr);padding-bottom:15px}.shop-products{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.shop-products{grid-template-columns:1fr}}
+
 .view-all {
     text-align: center;
     margin-top: 45px;
@@ -320,9 +342,9 @@ nav a.active {
 }
 
 
-/* ================= WHY LUXORA ================= */
+/* ================= WHY devi ================= */
 
-.why-luxora {
+.why-devi {
     padding: 100px 10%;
     display: flex;
     gap: 80px;
@@ -445,7 +467,7 @@ footer > p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .why-luxora {
+    .why-devi {
         flex-direction: column;
     }
 
@@ -508,6 +530,21 @@ footer > p {
     right: 0;
 }
 
+/* Cart preview controls */
+#cartItems { padding: 0 28px; max-height: calc(100vh - 210px); }
+.drawer-item { display: grid; grid-template-columns: 80px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid #e6e1d9; }
+.drawer-item img { width: 80px; height: 100px; object-fit: cover; }
+.drawer-item p { color: #a47b32; font-size: 9px; letter-spacing: 1.5px; margin: 0 0 4px; }
+.drawer-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; margin: 0 0 6px; }
+.drawer-quantity { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.drawer-quantity button { border: 1px solid #d8d1c5; background: #fff; width: 25px; height: 25px; cursor: pointer; }
+.drawer-quantity .text-button { width: auto; border: 0; color: #746d62; text-decoration: underline; font-size: 11px; }
+.drawer-empty { padding: 44px 0; text-align: center; color: #746d62; }
+.drawer-empty a { color: #a47b32; text-decoration: underline; }
+.cart-footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 28px 25px; background: #fff; border-top: 1px solid #e6e1d9; }
+.cart-footer .cart-total { display: flex; justify-content: space-between; margin: 0; font-size: 17px; }
+.cart-footer .checkout-btn { display: block; text-align: center; margin-top: 16px; }
+
 .cart-header {
     display: flex;
     justify-content: space-between;
@@ -562,7 +599,7 @@ footer > p {
     letter-spacing: 2px;
 }
 /* =================================
-   LUXORA SHOPPING BAG
+   devi SHOPPING BAG
 ================================= */
 
 .cart-panel {
@@ -851,3 +888,39 @@ footer > p {
 .empty-cart h2 {
     font-family: "Cormorant Garamond", serif;
 }
+
+/* Accounts and store administration */
+.account-page, .admin-page { padding-bottom: 80px; }
+.account-grid, .admin-grid { max-width: 1120px; margin: 40px auto; padding: 0 25px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.admin-grid { grid-template-columns: minmax(320px, .85fr) minmax(360px, 1.15fr); align-items: start; }
+.account-card { background: #fff; border: 1px solid #e5e0d7; padding: 28px; }
+.account-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; margin-bottom: 16px; }
+.account-card input:not([type='checkbox']), .account-card select, .account-card textarea, .coupon-box input, .address-select select { width: 100%; border: 1px solid #d8d1c5; background: #fffdf9; padding: 12px; margin: 7px 0; font: 14px 'Poppins', sans-serif; }
+.account-card textarea { min-height: 96px; resize: vertical; }
+.account-card label, .address-select { display: block; margin: 10px 0; font-size: 12px; color: #655e54; }
+.account-card button, .coupon-box button { border: 0; background: #292521; color: white; padding: 12px 18px; margin-top: 10px; font: 600 11px 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; }
+.account-card button:hover, .coupon-box button:hover { background: #a47b32; }
+#gate a { display: inline-block; margin-top: 12px; padding: 12px 18px; background: #292521; color: #fff; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+#gate a:hover { background: #a47b32; }
+.admin-signin { display: inline-block; margin-top: 14px; padding: 14px 22px; background: #a47b32; color: #fff; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 600; }
+.saved-address { border-top: 1px solid #e5e0d7; padding: 12px 0; font-size: 13px; }.saved-address p { color: #746d62; line-height: 1.6; margin-top: 5px; }
+.admin-product { display: flex; gap: 14px; border-top: 1px solid #e5e0d7; padding: 13px 0; }.admin-product img { width: 64px; height: 72px; object-fit: cover; }.admin-product p { color: #746d62; font-size: 12px; margin: 4px 0; }.admin-product button { padding: 7px 10px; margin: 0 5px 0 0; font-size: 9px; }
+.coupon-box { display: flex; gap: 6px; }.coupon-box input { margin: 0; }.coupon-box button { margin: 0; }
+.address-select select { display: block; margin-top: 6px; }.account-link { font-size: 11px; color: #746d62; margin-top: 12px; }.account-link a { color: #a47b32; text-decoration: underline; }.stock-note { color: #16833b; font-size: 12px; }
+@media (max-width: 700px) { .account-grid, .admin-grid { grid-template-columns: 1fr; padding: 0 15px; } }
+
+/* Final cart drawer layout overrides */
+.cart-panel { width: min(430px, 100%); }
+#cartItems { padding: 0 28px; max-height: calc(100vh - 210px); }
+.drawer-item { display: grid; grid-template-columns: 80px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid #e6e1d9; }
+.drawer-item img { width: 80px; height: 100px; object-fit: cover; }
+.drawer-item p { color: #a47b32; font-size: 9px; letter-spacing: 1.5px; margin: 0 0 4px; }
+.drawer-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; margin: 0 0 6px; }
+.drawer-quantity { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.drawer-quantity button { border: 1px solid #d8d1c5; background: #fff; width: 25px; height: 25px; cursor: pointer; }
+.drawer-quantity .text-button { width: auto; border: 0; color: #746d62; text-decoration: underline; font-size: 11px; }
+.drawer-empty { padding: 44px 0; text-align: center; color: #746d62; }
+.drawer-empty a { color: #a47b32; text-decoration: underline; }
+.cart-footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 28px 25px; background: #fff; border-top: 1px solid #e6e1d9; }
+.cart-footer .cart-total { display: flex; justify-content: space-between; margin: 0; font-size: 17px; }
+.cart-footer .checkout-btn { display: block; text-align: center; margin-top: 16px; }
